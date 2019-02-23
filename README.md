@@ -1,2 +1,2 @@
 # javascriptStudy
-Tutorial on Javascript
+JavaScript Tutorial
