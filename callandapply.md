@@ -1,0 +1,46 @@
+<h2> call and Apply method use </h2>
+
+
+1) The call() allows for a function/method belonging to one object to be assigned and called for a different object.
+
+2) call() provides a new value of this to the function.
+
+3) The call() method calls a function with a given this value and arguments provided individually.
+
+4) While the syntax of this function is almost identical to that of apply(), the fundamental difference is that call() accepts an argument list, while apply() accepts a single array of arguments.
+
+5) Using call to chain constructors for an object. Means, you can write a a method once and then inherit it in another object without having to rewrite the method for the new object.
+  Example:
+    function Animal(name, color) {
+      this.name = name;
+      this.price = price;
+    }
+
+    function Cat(name, color) {
+      Animal.call(this, name, price);
+    }
+    
+6) Using call to invoke an anonymous function.
+  Example:
+    function PrintCar() {
+        var car = [{
+          'name' : 'ciaz',
+          'brand' : 'maruti'
+        }];
+
+      (function(){
+        console.log(this); // printing a car object
+      }).call(car); // passing 'car' object so context is 'car' object
+    }
+PrintCar();  // this context is window object. as call site is global
+
+7) Using call to invoke a function and without specifying the first argument but in strict mode it's not working.
+
+8) What if the number of argument is 4 or more. It's hard to remember. We can use .apply() in this case. By using it we can write less code. See below example
+   Example:
+    function Horse(name, color) {
+        Animal.apply(this, arguments);  // Easy implementation. We can say less code.
+    }
+
+
+
