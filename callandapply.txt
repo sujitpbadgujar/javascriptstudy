@@ -1,4 +1,4 @@
-<h2> call and Apply method use </h2>
+Use of .call() and .apply()
 
 
 1) The call() allows for a function/method belonging to one object to be assigned and called for a different object.
